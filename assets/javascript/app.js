@@ -26,48 +26,48 @@ var questions = [{
     correct: "RVD",
     divClass: ".hardcore"
 },
-{
-    ques: "Winner of the first Money In The Bank Match?",
-    ans: ["Edge", "Chris Jericho", "CM Punk", "Kane"],
-    name: "moneyInTheBank",
-    correct: "Edge",
-    divClass: ".moneyInTheBank"
-},
-{
-    ques: "Most Royal Rumble Eliminations?",
-    ans: ["Hulk Hogan 19", "Kane 7", "Braun Strowman 13", "Daniel Bryan 6"],
-    name: "royalRumble",
-    correct: "Braun Strowman 13",
-    divClass: ".royalRumble"
-},
-{
-    ques: "Oldest WWE Champion",
-    ans: ["Hulk Hogan", "Big Show", "Andre The Giant", "Vince McMahon"],
-    name: "oldest",
-    correct: "Vince McMahnon",
-    divClass: ".oldest"
-},
-{
-    ques: "First Intercontinental Champion?",
-    ans: ["Randy Savage", " Pat Patterson", "Ultimate Warrior", "Rick Rude"],
-    name: "intercontinental",
-    correct: "Pat Patterson",
-    divClass: ".intercontinental"
-},
-{
-    ques: "Who won the most WWE Tag Team Titles?",
-    ans: ["Edge & Christian", "The Hart Foundation", "3D", "Hardy Boyz"],
-    name: "tagTeam",
-    correct: "3D",
-    divClass: ".tagTeam"
-},
-{
-    ques: "Youngest WWE Champion?",
-    ans: ["Shane McMahnon", "The Rock", "Brock Lesnar", "Randy Orton"],
-    name: "youngestChamp",
-    correct: "Randy Orton",
-    divClass: ".youngestChamp"
-}
+// {
+//     ques: "Winner of the first Money In The Bank Match?",
+//     ans: ["Edge", "Chris Jericho", "CM Punk", "Kane"],
+//     name: "moneyInTheBank",
+//     correct: "Edge",
+//     divClass: ".moneyInTheBank"
+// },
+// {
+//     ques: "Most Royal Rumble Eliminations?",
+//     ans: ["Hulk Hogan 19", "Kane 7", "Braun Strowman 13", "Daniel Bryan 6"],
+//     name: "royalRumble",
+//     correct: "Braun Strowman 13",
+//     divClass: ".royalRumble"
+// },
+// {
+//     ques: "Oldest WWE Champion",
+//     ans: ["Hulk Hogan", "Big Show", "Andre The Giant", "Vince McMahon"],
+//     name: "oldest",
+//     correct: "Vince McMahnon",
+//     divClass: ".oldest"
+// },
+// {
+//     ques: "First Intercontinental Champion?",
+//     ans: ["Randy Savage", " Pat Patterson", "Ultimate Warrior", "Rick Rude"],
+//     name: "intercontinental",
+//     correct: "Pat Patterson",
+//     divClass: ".intercontinental"
+// },
+// {
+//     ques: "Who won the most WWE Tag Team Titles?",
+//     ans: ["Edge & Christian", "The Hart Foundation", "3D", "Hardy Boyz"],
+//     name: "tagTeam",
+//     correct: "3D",
+//     divClass: ".tagTeam"
+// },
+// {
+//     ques: "Youngest WWE Champion?",
+//     ans: ["Shane McMahnon", "The Rock", "Brock Lesnar", "Randy Orton"],
+//     name: "youngestChamp",
+//     correct: "Randy Orton",
+//     divClass: ".youngestChamp"
+// }
 ] 
 
 var labels = ["first", "second", "third", "forth"];
@@ -76,7 +76,7 @@ var labels = ["first", "second", "third", "forth"];
 var startGame = $("#start-btn").on('click', function() {
 $(this).parent().hide();
 $('.container').show();
-countdown(60);
+countdown(30);
 questionDisplay();
 });
 
@@ -85,7 +85,7 @@ var questionDisplay = function() {
 $(".questions :not('#sub-but')").empty();
 
 
-for (var j = 0; j < 10; j++) {
+for (var j = 0; j < 4; j++) {
 $('.questions').prepend('<div class="' + questions[j].name + '"></div>');
 $(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
 
@@ -114,7 +114,7 @@ if (seconds <= 0) {
 
     
     
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 4; i++) {
 
         if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
@@ -151,7 +151,7 @@ var wrongAnswers = 0;
 var unAnswered = 0;
 
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 4; i++) {
 
 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
